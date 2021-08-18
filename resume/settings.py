@@ -43,7 +43,7 @@ environ.Env.read_env()
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['myreseumee.herokuapp.com', '127.0.0.1']
 
@@ -154,7 +154,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 
 cloudinary.config( 
-  cloud_name = "dmknxlj2o", 
-  api_key = "313863681294292", 
-  api_secret = "SZHt4PVd4QRQM_yzQY_Ivghbtg0",
+  cloud_name = env('cloud_name'), 
+  api_key = env('api_key'), 
+  api_secret = env('api_secret'),
 )
