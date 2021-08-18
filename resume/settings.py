@@ -15,6 +15,11 @@ import os
 from django.contrib.messages import constants as messages
 import environ
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-secondary',
@@ -54,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'resumeApp',
     'ckeditor',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +152,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
+
+cloudinary.config( 
+  cloud_name = "dmknxlj2o", 
+  api_key = "313863681294292", 
+  api_secret = "SZHt4PVd4QRQM_yzQY_Ivghbtg0",
+)

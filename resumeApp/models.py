@@ -1,5 +1,6 @@
 from django.db import models
-from django.db import models
-from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
+class Picture(models.Model):
+    image = CloudinaryField('image')
