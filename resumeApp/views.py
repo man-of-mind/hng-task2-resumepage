@@ -28,6 +28,6 @@ def sendMessage(request):
             send_mail(subject, mail_body, 'admin@example.com', ['admin@example.com'])
         except BadHeaderError:
             return HttpResponse('Invalid Header')
-        messages.success(request, 'Message sent')
+        messages.success(request, 'Message sent successfully!!!')
         return redirect('home')
     return render(request, 'resumeApp/index.html')
